@@ -39,7 +39,8 @@ export default function App() {
       const data = await sendData(parsedPayload);
       setRes(data);
     } catch (err) {
-      setError(err.message || "Failed to analyze node hierarchy.");
+      console.error(err);
+      setError(err.message);
     } finally {
       setLoading(false);
     }

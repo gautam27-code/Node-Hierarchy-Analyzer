@@ -207,8 +207,11 @@ app.post("/bfhl", (req, res) => {
   }
 });
 
-app.get("/health", (req, res) => {
-  res.json({ status: "ok" });
+app.get("/", (req, res) => {
+  res.json({
+    status: "API Running",
+    endpoint: "/bfhl"
+  });
 });
 
 const PORT = process.env.PORT || 5000;
